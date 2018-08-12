@@ -22,15 +22,14 @@ class Ship:
         self.moving_right = False
         self.moving_left = False
 
-    def updatePos(self):
+    def update_pos(self):
         """updates the ship's position"""
-        if self.moving_right:
+        if self.moving_right and self.rect.right < self.screen_rect.right:
             self.center += self.board_settings.ship_speed_factor
-        if self.moving_left:
+        if self.moving_left and self.rect.left > self.screen_rect.left:
             self.center -= self.board_settings.ship_speed_factor
 
         self.rect.centerx = self.center
-
 
     def place_ship(self):
         self.screen.blit(self.image,self.rect)

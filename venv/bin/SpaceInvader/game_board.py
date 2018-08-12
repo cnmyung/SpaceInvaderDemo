@@ -18,7 +18,7 @@ def run_game():
     # starts main for the game
     while True:
         e_handlers.check_events(ship)
-        ship.updatePos()
+        ship.update_pos()
         e_handlers.update_screen(board_settings,screen,ship)
 
         screen.fill(board_settings.bg_color)
