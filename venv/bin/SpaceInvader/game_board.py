@@ -25,5 +25,10 @@ def run_game():
         e_handlers.update_ammo(ammo)
         e_handlers.update_screen(board_settings,screen,ship,ammo)
 
+        # remove bullets off the screen
+        for bullet in ammo.copy():
+            if bullet.rect.bottom <= 0:
+                ammo.remove(bullet)
+
 
 run_game()
